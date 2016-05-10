@@ -11,3 +11,6 @@ library name | version used | notes
 `triangle` | `20160203` | [PyPI page](https://pypi.python.org/pypi/triangle/)
 `numpy` | `1.11.0` | http://www.numpy.org
 `scipy` | `0.18.0.dev0+339c771` | https://www.scipy.org ; I built from master branch for use of `scipy.spatial.SphericalVoronoi` -- can use an older version if you don't mind skipping that example in tutorial
+`matplotlib` | `1.5.1` | http://matplotlib.org
+`ipywidgets` | `4.1.1` | https://github.com/ipython/ipywidgets
+`pyshp` | `1.2.3` | [PyPI page](https://pypi.python.org/pypi/pyshp) ; use `import shapefile`
