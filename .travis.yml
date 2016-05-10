@@ -11,7 +11,7 @@ install:
   - docker build -t tylerreddy/pycon-2016 .
 
 script:
-  - docker run tylerreddy/pycon-2016
+  - docker run tylerreddy/pycon-2016 /bin/sh -c "exit"
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
