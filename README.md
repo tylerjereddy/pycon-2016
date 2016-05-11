@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/tylerjereddy/pycon-2016.svg?branch=master)](https://travis-ci.org/tylerjereddy/pycon-2016)
 # pycon-2016
 PyCon 2016 Computational Geometry Tutorial
 
