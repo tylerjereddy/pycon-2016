@@ -7,7 +7,16 @@ ADD *.p *.py *ipynb /home/jovyan/work/
 
 #custom conda installation of dependencies for tutorial
 #conda install of scipy master branch so that scipy.spatial.SphericalVoronoi may be used during tutorial
-RUN conda create --name py27 python=2 numpy=1.11.0 matplotlib=1.5.1 ipywidgets=4.1.1 ipykernel
-RUN /bin/bash -c 'source activate py27; python -m ipykernel install --user' && \
-   conda install -c https://conda.anaconda.org/treddy scipy && \
-   pip install triangle pyshp
+RUN conda create --quiet --yes -p $CONDA_DIR/envs/python2 python=2.7 \
+	'ipykernel' \
+	'numpy=1.11.0' \ 
+	'matplotlib=1.5.1' \
+	'ipywidgets=4.1.1' \
+     	&& conda install -c https://conda.anaconda.org/treddy scipy \
+	&& conda clean -tipsy
+
+RUN pip install triangle pyshp
+   
+USER root
+RUN $CONDA_DIR/envs/python2/bin/python -m ipykernel install
+USER jovyan
