@@ -4,4 +4,6 @@ FROM jupyter/datascience-notebook
 RUN conda install -c https://conda.anaconda.org/treddy scipy
 
 #include the necessary files in the image at the default working path set by the Jupyter team
-ADD * /home/jovyan/work/
+ADD shapefiles/ /home/jovyan/work/shapefiles/
+ADD images/ /home/jovyan/work/images/
+ADD *.p *.py *ipynb /home/jovyan/work/
