@@ -12,6 +12,7 @@ RUN conda create --quiet --yes -p $CONDA_DIR/envs/python2 python=2.7 \
 	'numpy=1.11.0' \ 
 	'matplotlib=1.5.1' \
 	'ipywidgets=4.1.1' \
+	'openblas' \
 	&& /bin/bash -c "source activate /opt/conda/envs/python2 && conda install -c https://conda.anaconda.org/treddy scipy && conda clean -tipsy && pip install triangle pyshp"
    
 USER root
