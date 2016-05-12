@@ -11,9 +11,8 @@ RUN conda create --quiet --yes -p $CONDA_DIR/envs/python2 python=2.7 \
 	'ipykernel' \
 	'numpy=1.11.0' \ 
 	'matplotlib=1.5.1' \
-	'ipywidgets=4.0' \
 	'openblas' \
-	&& /bin/bash -c "source activate /opt/conda/envs/python2 && conda install -c https://conda.anaconda.org/treddy scipy && conda clean -tipsy && pip install triangle pyshp"
+	&& /bin/bash -c "source activate /opt/conda/envs/python2 && conda install -c https://conda.anaconda.org/treddy scipy && conda install -c conda-forge ipywidgets=5.1.3 && conda clean -tipsy && pip install triangle pyshp"
 
 USER root
 RUN $CONDA_DIR/envs/python2/bin/python -m ipykernel install
