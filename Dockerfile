@@ -16,8 +16,8 @@ RUN conda create --quiet --yes -p $CONDA_DIR/envs/python2 python=2.7 \
 	&& /bin/bash -c "source activate /opt/conda/envs/python2 && conda install -c https://conda.anaconda.org/treddy scipy && conda clean -tipsy && pip install triangle pyshp && jupyter nbextension enable --py widgetsnbextension --sys-prefix"
 
 USER root
-RUN bin/bash -c "source activate /opt/conda/envs/python2/ && jupyter nbextension enable --py --sys-prefix widgetsnbextension"
+RUN /bin/bash -c "source activate /opt/conda/envs/python2/ && jupyter nbextension enable --py --sys-prefix widgetsnbextension"
 RUN $CONDA_DIR/envs/python2/bin/python -m ipykernel install
-RUN bin/bash -c "source activate /opt/conda/envs/python2/ && jupyter nbextension enable --py --sys-prefix widgetsnbextension"
+RUN /bin/bash -c "source activate /opt/conda/envs/python2/ && jupyter nbextension enable --py --sys-prefix widgetsnbextension"
 USER jovyan
-RUN bin/bash -c "source activate /opt/conda/envs/python2/ && jupyter nbextension enable --py --sys-prefix widgetsnbextension"
+RUN /bin/bash -c "source activate /opt/conda/envs/python2/ && jupyter nbextension enable --py --sys-prefix widgetsnbextension"
