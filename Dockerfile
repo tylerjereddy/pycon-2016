@@ -16,4 +16,3 @@ RUN conda create --quiet --yes -p $CONDA_DIR/envs/python2 python=2.7 \
 
 USER root
 RUN $CONDA_DIR/envs/python2/bin/python -m ipykernel install
-USER jovyan
