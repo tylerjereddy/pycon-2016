@@ -4,6 +4,7 @@ FROM jupyter/minimal-notebook
 ADD shapefiles/ /home/jovyan/work/shapefiles/
 ADD images/ /home/jovyan/work/images/
 ADD *.p *.py *ipynb /home/jovyan/work/
+RUN chown jovyan /home/jovyan/work
 
 #custom conda installation of dependencies for tutorial
 #conda install of scipy master branch so that scipy.spatial.SphericalVoronoi may be used during tutorial
