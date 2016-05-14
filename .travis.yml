@@ -6,6 +6,7 @@ services:
 before_install:
   - sudo apt-get update
   - sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confnew" install docker-engine=1.10.3-0~trusty
+  - sudo chmod a+w computational_geometry_tutorial.ipynb
 
 install:
   - docker build -t tylerreddy/pycon-2016 .
