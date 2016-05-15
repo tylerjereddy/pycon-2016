@@ -22,3 +22,8 @@ library name | version used | notes
 1. Install the above dependencies manually / with a package manager and run the `ipython notebook` on your machine so that you may execute all the cells as I go through them (please check that this works in advance if possible).
 2. Similar to #1 except that you simply use the `Jupyter` notebook to follow along statically (without executing any cells). This is not ideal, but if you really can't get the prerequisite libraries installed, you could at least have a copy of the static notebook on your screen.
 3. You could follow along using the automatically-rendered html version of the notebook on the github page. This has the advantage that you don't need to install anything other than a modern web browser, but the drawback of depending on an internet connection (and again, only providing static content).
+4. I've made a [docker](https://www.docker.com) image that you may be able to use. Note that, at present, the javascript widgets won't work, but you should otherwise be able to follow along, execute the code interactively, and even save your work if needed (i.e., using [`docker cp`](http://stackoverflow.com/questions/22907231/copying-files-from-host-to-docker-container) or mounting a local path). Here are the basic steps after installing docker (but you should definitely test this yourself before the tutorial, especially for mac and windows):
+  1. `docker pull tylerreddy/pycon-2016`  
+  2. `docker run -d -p 8888:8888 tylerreddy/pycon-2016`
+  3. open `http://localhost:8888` in browser
+  4. click on `computational_geometry_tutorial.ipynb` and follow along
